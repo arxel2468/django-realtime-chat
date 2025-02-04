@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Manually added
+    'channels',   # Django Channels
+    'chat',       # Chat app
 ]
 
 MIDDLEWARE = [
@@ -121,3 +125,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+##### Manually added #####
+
+# Configure ASGI for WebSockets
+ASGI_APPLICATION = "chat_project.asgi.application"
+
+# Redis-based WebSocket layer
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {"hosts": [("127.0.0.1", 6379)]},
+    },
+}

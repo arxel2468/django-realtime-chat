@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Users</title>
+</head>
+<body>
+    <h2>Online Members</h2>
+    <ul id="users"></ul>
+
+    <script>
+        const socket = new WebSocket("ws://" + window.location.host + "/ws/online_users/");
+
+        socket.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            const usersList = document.getElementById("users");
+            usersList.innerHTML = "";
+            data.users.forEach(user => {
+                const li = document.createElement("li");
+                li.textContent = user;
+                usersList.appendChild(li);
+            });
+        };
+    </script>
+</body>
+</html>
