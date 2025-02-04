@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Chat Room</title>
-</head>
-<body>
-    <h2>Real-Time Chat</h2>
-    <input id="messageInput" type="text" placeholder="Type a message...">
-    <button onclick="sendMessage()">Send</button>
-    <ul id="messages"></ul>
-
     <script>
         const socket = new WebSocket("ws://" + window.location.host + "/ws/chat/");
-
         socket.onmessage = function(event) {
             const data = JSON.parse(event.data);
-            const messages = document.getElementById("messages");
-            const newMessage = document.createElement("li");
-            newMessage.textContent = data.message;
-            messages.appendChild(newMessage);
+            document.querySelector("#chatbox").innerHTML += `<p><b>${data.username}:</b> ${data.message}</p>`;
         };
-
         function sendMessage() {
-            const messageInput = document.getElementById("messageInput");
-            const message = messageInput.value;
-            socket.send(JSON.stringify({ message }));
+            const messageInput = document.querySelector("#message");
+            socket.send(JSON.stringify({
+                "message": messageInput.value,
+                "username": "User" // Replace with actual user name
+            }));
             messageInput.value = "";
         }
     </script>
+</head>
+<body>
+    <h2>Chat Room</h2>
+    <div id="chatbox"></div>
+    <input type="text" id="message" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
 </body>
 </html>

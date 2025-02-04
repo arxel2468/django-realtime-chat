@@ -1,0 +1,133 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environment
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# If you use SQLite database files
+*.sqlite3
+
+# Media folder (for user-uploaded content)
+media/
+
+# Static Root (collectstatic)
+staticfiles/
+static/
+
+# Testing
+coverage/
+htmlcov/
+.tox/
+.noseids
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# Sphinx documentation
+docs/_build/
+
+# Pytest
+.pytest_cache/
+
+# Migrations
+*/migrations/*
+
+# Ignore all migrations but keep the __init__.py
+!*/migrations/__init__.py
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Environments
+.env
+*.env
+
+# IDEs and editors
+.vscode/
+*.code-workspace
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Node modules (if using Node.js for frontend)
+node_modules/
+
+# Yarn lock file
+yarn.lock
+
+# Package managers
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Profiling data
+.prof
+
+# Pyre type checker
+.pyre/
+
+# Cython debug symbols
+cython_debug/

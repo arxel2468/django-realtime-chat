@@ -31,6 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Manually added
+    'daphne',     # ASGI Server
+    'channels',   # Django Channels
+    'chat',       # Chat app
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,9 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    # Manually added
-    'channels',   # Django Channels
-    'chat',       # Chat app
+    
 ]
 
 MIDDLEWARE = [
