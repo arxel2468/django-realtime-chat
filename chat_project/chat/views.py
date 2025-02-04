@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Message
+from django.http import JsonResponse
+from chat.consumers import ChatConsumer
 
 def chat_room(request):
     messages = Message.objects.all()
@@ -12,3 +14,6 @@ def index(request):
         return redirect("chat_room")
 
     return render(request, "index.html")
+
+def get_online_users(request):
+    return JsonResponse({"online_users": list(ChatConsumer.online_users.values())})
